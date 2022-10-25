@@ -6,7 +6,7 @@ import colors from "../../utils/colors";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom:10,
+    marginBottom: 10,
   },
   preview: {
     width: "100%",
@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  containerButton:{
+  containerButton: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     margin: 10,
-  }
+  },
 });
