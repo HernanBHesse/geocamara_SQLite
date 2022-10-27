@@ -16,7 +16,6 @@ import colors from "../../utils/colors";
 //Styles
 import { styles } from "./styles";
 
-
 const Maps = ({ navigation }) => {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
@@ -35,7 +34,8 @@ const Maps = ({ navigation }) => {
   };
 
   const onHandleSaveLocation = () => {
-    if (selectedLocation) navigation.navigate("NewPlace", { mapLocation: selectedLocation });
+    if (selectedLocation)
+      navigation.navigate("NewPlace", { mapLocation: selectedLocation });
   };
 
   useLayoutEffect(() => {
@@ -49,7 +49,11 @@ const Maps = ({ navigation }) => {
   }, [navigation, onHandleSaveLocation]);
 
   return (
-    <MapView style={styles.container} initialRegion={initialRegion} onPress={onHandlerPickLocation}>
+    <MapView
+      style={styles.container}
+      initialRegion={initialRegion}
+      onPress={onHandlerPickLocation}
+    >
       {selectedLocation && (
         <Marker
           title="Marcar en el mapa"

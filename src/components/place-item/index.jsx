@@ -7,7 +7,6 @@ import { View, Image, TouchableOpacity, Text } from "react-native";
 //styles
 import { styles } from "./styles";
 
-
 const PlaceItem = ({ title, image, address, onSelect }) => {
   return (
     <TouchableOpacity onPress={onSelect} style={styles.container}>

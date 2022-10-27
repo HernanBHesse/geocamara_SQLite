@@ -2,7 +2,13 @@
 import React, { useState } from "react";
 
 //React Native
-import { View,  ScrollView, TextInput, Button, KeyboardAvoidingView, } from "react-native";
+import {
+  View,
+  ScrollView,
+  TextInput,
+  Button,
+  KeyboardAvoidingView,
+} from "react-native";
 
 //Redux
 import { useDispatch } from "react-redux";
@@ -43,8 +49,7 @@ const NewPlace = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAvoidingView  behavior={"height"}
-    style={styles.container}>
+    <KeyboardAvoidingView behavior={"height"} style={styles.container}>
       <ScrollView style={styles.containerScroll}>
         <View style={styles.content}>
           <TextInput
@@ -55,7 +60,11 @@ const NewPlace = ({ navigation }) => {
           />
           <ImageSelector onImage={onHandlerImage} />
           <LocationSelector onLocation={onHandlerLocation} />
-          <Button title="Salvar locación" onPress={onHandleSubmit} color={colors.confirmButton} />
+          <Button
+            title="Salvar locación"
+            onPress={onHandleSubmit}
+            color={colors.confirmButton}
+          />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

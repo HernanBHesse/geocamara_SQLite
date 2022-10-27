@@ -13,7 +13,6 @@ import colors from "../../utils/colors";
 //Styles
 import { styles } from "./styles";
 
-
 const ImageSelector = ({ onImage }) => {
   const [pickedUrl, setPickedUrl] = useState();
 
@@ -21,7 +20,9 @@ const ImageSelector = ({ onImage }) => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
 
     if (status !== "granted") {
-      Alert.alert("Necesitas habilitar los permisos de la camera", [{ text: "✔️" }]);
+      Alert.alert("Necesitas habilitar los permisos de la camera", [
+        { text: "✔️" },
+      ]);
       return false;
     }
     return true;
@@ -50,7 +51,11 @@ const ImageSelector = ({ onImage }) => {
           <Image style={styles.image} source={{ uri: pickedUrl }} />
         )}
       </View>
-      <Button title="Tomar foto" color={colors.secondary} onPress={onHandleTakePhoto} />
+      <Button
+        title="Tomar foto"
+        color={colors.secondary}
+        onPress={onHandleTakePhoto}
+      />
     </View>
   );
 };

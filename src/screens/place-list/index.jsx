@@ -1,8 +1,12 @@
+//React
+import { useEffect } from "react";
+
 //React Native
 import { View, Text, FlatList } from "react-native";
 
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { loadPlaces } from "../../store/place.slice";
 
 //Component
 import { PlaceItem } from "../../components";
@@ -10,9 +14,13 @@ import { PlaceItem } from "../../components";
 //Theme colors
 import { styles } from "./styles";
 
-
 const PlaceList = ({ navigation }) => {
+  const dispatch = useDispatch();
   const places = useSelector((state) => state.place.places);
+
+  useEffect(() => {
+    dispatch(loadPlaces());
+  }, [dispatch]);
 
   const renderItem = ({ item }) => (
     <PlaceItem

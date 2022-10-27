@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 //React Native
-import { View, Text, Button, Alert, TouchableOpacity } from "react-native";
+import { View, Text, Alert, TouchableOpacity } from "react-native";
 
 //Expo Location
 import * as Location from "expo-location";
@@ -14,14 +14,10 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import MapPreview from "../map-preview";
 
 //Icons from expo
-import { FontAwesome } from '@expo/vector-icons';
-
-//Theme colors
-import colors from "../../utils/colors";
+import { FontAwesome } from "@expo/vector-icons";
 
 //Styles
 import { styles } from "./styles";
-
 
 const LocationSelector = ({ onLocation }) => {
   const navigation = useNavigation();
@@ -51,7 +47,6 @@ const LocationSelector = ({ onLocation }) => {
     const location = await Location.getCurrentPositionAsync({
       timeout: 5000,
     });
-
 
     setPickedLocation({
       lat: location.coords.latitude,

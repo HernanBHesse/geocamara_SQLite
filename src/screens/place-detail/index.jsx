@@ -10,7 +10,6 @@ import { MapPreview } from "../../components";
 //Styles
 import { styles } from "./styles";
 
-
 const PlaceDetail = ({ navigation, route }) => {
   const { placeId } = route.params;
   const place = useSelector((state) =>
@@ -24,7 +23,10 @@ const PlaceDetail = ({ navigation, route }) => {
         <View style={styles.addressContainer}>
           <Text style={styles.address}>{place.address}</Text>
         </View>
-        <MapPreview style={styles.map} location={{ lat: place.coords.lat, lng: place.coords.lng }}>
+        <MapPreview
+          style={styles.map}
+          location={{ lat: place.coords.lat, lng: place.coords.lng }}
+        >
           <Text>No es una localización posible</Text>
         </MapPreview>
       </View>
